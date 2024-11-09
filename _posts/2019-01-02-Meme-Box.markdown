@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Meme Box"
+date:   2019-01-02
+categories: Projects
+---
+
+I built a box to put memes on, that I continually add to. Currently it is used to store games. The motivation was that I thought it'd be funny.
+
+![Meme Box 1](/assets/memeBox1.jpg){: width="30%" } 
+![Meme Box 2](/assets/memeBox2.jpg){: width="30%" } 
