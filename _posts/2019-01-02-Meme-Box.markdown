@@ -3,6 +3,7 @@ layout: post
 title:  "Meme Box"
 date:   2019-01-02
 categories: Projects
+thumbnail-img: /assets/memeBox1.jpg
 ---
 
 I built a box to put memes on, that I continually add to. Currently it is used to store games. The motivation was that I thought it'd be funny.

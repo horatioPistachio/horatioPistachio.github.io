@@ -3,6 +3,8 @@ layout: post
 title:  "Retro Speakers"
 date:   2021-01-01
 categories: Projects
+thumbnail-img: /assets/retroSpeakers1.jpg
+
 ---
 
 

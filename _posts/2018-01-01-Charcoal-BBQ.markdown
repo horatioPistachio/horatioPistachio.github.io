@@ -3,6 +3,7 @@ layout: post
 title:  "Charcoal BBQ"
 date:   2018-01-01
 categories: Projects
+thumbnail-img: /assets/charcoalBBQ1.jpg
 ---
 This project is a charcoal bbq to cook food on. It also doubles as a table. This is one of my few wood work projects. It Doesn't work well due to the hotplate being too far away from the coals. The motivation was that I wanted to cook charcoaled food and needed more room to store stuff for the other gas bbq.
 

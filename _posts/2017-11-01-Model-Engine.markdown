@@ -3,6 +3,7 @@ layout: post
 title:  "Model Engine"
 date:   2017-11-01
 categories: Projects
+thumbnail-img: /assets/modelEngine1.jpg
 ---
 This was my year 12 project for Advanced Manufacturing. It's a model engine that can be used for demonstration. The motivation was that I was really into engines at the time and thought I should make something so I and other people can see how they work.
 

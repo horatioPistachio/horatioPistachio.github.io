@@ -3,6 +3,8 @@ layout: post
 title:  "3d Printer CNC"
 date:   2022-01-01
 categories: Projects
+thumbnail-img: /assets/printercnc1.jpg
+
 ---
 
 
