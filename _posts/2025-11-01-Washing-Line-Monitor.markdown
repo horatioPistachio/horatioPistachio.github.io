@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "washing line monitor"
+title:  "Washing Line Monitor"
 date:   2025-11-01
 categories: Projects
 thumbnail-img: /assets/washinglinemonitor2.jpg
@@ -11,7 +11,7 @@ Upon moving out of home, I came across a problem, whenever I tried to dry my clo
 
 The solution was a device that estimates the wetness of your clothes. It can that notify you when they are either dry, or will be rained on before they are dry.
 
-The first iteration used a temperature and humidity sensor to estimate the amount of water in the air (absolute humidity). This data was then sent back to the webserver (used in [home hydro](/2024-03-01-Indoor hydroponics v2)) which would then store the data and produce plots. In the sample below, you can see the absolute humidity dropping and then reaching a steady state at about 3pm. This is the point at which we expect the clothes to the dry (the rapid jump at 5:30pm is when i bought the sensor indoors). 
+The first iteration used a temperature and humidity sensor to estimate the amount of water in the air (absolute humidity). This data was then sent back to the webserver (used in [home hydro](/2024-03-01-Indoor-hydroponics-v2)) which would then store the data and produce plots. In the sample below, you can see the absolute humidity dropping and then reaching a steady state at about 3pm. This is the point at which we expect the clothes to the dry (the rapid jump at 5:30pm is when i bought the sensor indoors). 
 
 ![washinglinemonitor1](/assets/washinglinemonitor1.png){: width="30%" } 
 
