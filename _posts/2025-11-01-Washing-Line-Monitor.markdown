@@ -1,10 +1,11 @@
-2025-10-13 21:21
+---
+layout: post
+title:  "washing line monitor"
+date:   2025-11-01
+categories: Projects
+thumbnail-img: /assets/washinglinemonitor2.jpg
 
-Status:
-
-Tags: #blog #WashingLineMonitor 
-
-# Blog - Washing line monitor
+---
 
 Upon moving out of home, I came across a problem, whenever I tried to dry my clothes outside, it would start raining. This meant i would have to take them inside and use the dryer. The easiest solution is just to use the dryer. I estimate that it would only cost around $30 a year to do this, however, I am stubborn, so i set out to fix the issue.
 
