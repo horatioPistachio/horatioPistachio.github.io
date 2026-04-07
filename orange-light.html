@@ -1,0 +1,161 @@
+---
+layout: page
+permalink: /orange-light.html
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;600&display=swap"
+    rel="stylesheet"
+>
+<link rel="stylesheet" href="/assets/css/orange-light.css">
+
+<div class="page-shell">
+        <header class="hero panel">
+            <div class="hero-content">
+                <!-- <p class="eyebrow">Orange-Light Fuel Calculator</p> -->
+                <h1>What does stopping really cost?</h1>
+                <p class="lede">
+                    Estimate the fuel cost of stopping for an orange light.
+                </p>
+            </div>
+            <svg class="hero-traffic-light" aria-hidden="true" viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg">
+                <!-- Housing -->
+                <rect x="5" y="5" width="50" height="130" rx="12" ry="12" fill="#1a1a1a"/>
+                <!-- Red light (dim) -->
+                <circle cx="30" cy="33" r="16" fill="#3a0a0a"/>
+                <circle cx="30" cy="33" r="13" fill="#5c1010"/>
+                <!-- Orange light (lit) -->
+                <circle cx="30" cy="70" r="16" fill="#7a3800"/>
+                <circle cx="30" cy="70" r="13" fill="#ff8c00"/>
+                <circle cx="30" cy="70" r="10" fill="#ffb347" opacity="0.9"/>
+                <!-- Green light (dim) -->
+                <circle cx="30" cy="107" r="16" fill="#0a2e0a"/>
+                <circle cx="30" cy="107" r="13" fill="#133d13"/>
+            </svg>
+        </header>
+
+        <main class="layout">
+            <section class="panel calculator-panel" aria-labelledby="calculator-title">
+                <div class="section-heading">
+                    <p class="section-kicker">Inputs</p>
+                    <h2 id="calculator-title">Vehicle and fuel assumptions</h2>
+                </div>
+
+                <form id="calculatorForm" novalidate>
+                    <div class="field-grid">
+                        <label class="field" for="carMass">
+                            <span>Car mass</span>
+                            <select id="carMass" name="carMass" required>
+                                <option value="1400">Hatch (1400 kg)</option>
+                                <option value="1700" selected>Medium car (1700 kg)</option>
+                                <option value="2000">SUV (2000 kg)</option>
+                                <option value="2000">Ute (2000 kg)</option>
+                                <option value="2500">Yank Tank (2500 kg)</option>
+                                <option value="42500">Loaded semi trailer (42500 kg)</option>
+                            </select>
+                            <small>Vehicle mass in kilograms.</small>
+                            <p class="field-error" id="carMassError"></p>
+                        </label>
+
+                        <label class="field" for="carSpeed">
+                            <span>Car speed</span>
+                            <input id="carSpeed" name="carSpeed" type="number" min="0" step="5" value="60" required>
+                            <small>Road speed in km/h. The calculation converts this to m/s.</small>
+                            <p class="field-error" id="carSpeedError"></p>
+                        </label>
+
+                        <label class="field" for="engineEfficiency">
+                            <span>Engine efficiency</span>
+                            <input id="engineEfficiency" name="engineEfficiency" type="number" min="0.01" max="1" step="0.01" value="0.22" required>
+                            <small>Decimal efficiency value. The estimated efficiency for an accelerating car is 0.22.</small>
+                            <p class="field-error" id="engineEfficiencyError"></p>
+                        </label>
+
+                        <label class="field" for="fuelType">
+                            <span>Fuel type</span>
+                            <select id="fuelType" name="fuelType" required>
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                            </select>
+                            <small id="fuelTypeHint">Petrol is calculated at 33.8 MJ/L.</small>
+                            <p class="field-error" id="fuelTypeError"></p>
+                        </label>
+
+                        <label class="field" for="fuelPrice">
+                            <span>Fuel price per liter ($)</span>
+                            <input id="fuelPrice" name="fuelPrice" type="number" min="0" step="0.01" value="2.60" required>
+                            <small>Use your local currency unit per liter.</small>
+                            <p class="field-error" id="fuelPriceError"></p>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button">Estimate stopping cost</button>
+                        <button type="button" class="secondary-button" id="resetButton">Reset</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel result-panel" aria-live="polite" aria-labelledby="results-title">
+                <div class="section-heading">
+                    <p class="section-kicker">Output</p>
+                    <h2 id="results-title">Estimated stopping cost</h2>
+                </div>
+
+                <p class="result-value" id="resultValue">0.00</p>
+                <p class="result-note" id="resultNote">
+                    This value uses the same currency unit as your fuel price input.
+                </p>
+
+                <section class="payoff-card" aria-labelledby="ticketPayoffTitle">
+                    <p class="section-kicker payoff-kicker">Ticket Benchmark</p>
+                    <h3 id="ticketPayoffTitle">Times required to pay off ticket</h3>
+                    <p class="payoff-value" id="ticketPayoffValue">0 times</p>
+                    <p class="payoff-note" id="ticketPayoffNote">
+                        Based on a $595 red-light ticket benchmark.
+                    </p>
+                </section>
+
+                <dl class="result-breakdown" id="resultBreakdown">
+                    <div>
+                        <dt>Fuel needed</dt>
+                        <dd id="fuelUsedValue">0.0000 L</dd>
+                    </div>
+                    <div>
+                        <dt>Kinetic energy</dt>
+                        <dd id="kineticEnergyValue">0 kJ</dd>
+                    </div>
+                    <div>
+                        <dt>Speed in m/s</dt>
+                        <dd id="speedMsValue">0.00 m/s</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="panel explainer-panel" aria-labelledby="explanation-title">
+                <div class="section-heading">
+                    <p class="section-kicker">Method</p>
+                    <h2 id="explanation-title">How the estimate works</h2>
+                </div>
+
+                <p>
+                    The model assumes the vehicle loses its kinetic energy when it stops, then needs to recreate that energy by burning fuel to get back to the original speed.
+                </p>
+
+                <div class="formula-card">
+                    <p><strong>1.</strong> Convert speed from km/h to m/s.</p>
+                    <p><strong>2.</strong> Calculate vehicle kinetic energy: <code>0.5 × mass × speed²</code>.</p>
+                    <p><strong>3.</strong> Estimate fuel required: <code>energy ÷ (efficiency × fuel energy density)</code>.</p>
+                    <p><strong>4.</strong> Multiply liters of fuel by the entered fuel price.</p>
+                </div>
+
+                <p class="fine-print">
+                    This is a simplified estimate. Your mileage may vary.
+                </p>
+            </section>
+        </main>
+    </div>
+
+<script src="/assets/js/orange-light.js"></script>

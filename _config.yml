@@ -24,6 +24,7 @@ author: Conor
 navbar-links:
   Home : "/"
   About Me: "about"
+  Orange Light: "/orange-light.html"
 
 ################
 # --- Logo --- #
